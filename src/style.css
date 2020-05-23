@@ -1,0 +1,108 @@
+body {
+   background: rgb(218, 234, 235);
+ }
+ h1 {
+  color:#2c2cb1;
+
+ }
+ #app {
+   width: 70%;
+   margin: 20px auto;
+ }
+ .table {
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 5px 50px;
+  color: rgb(44, 44, 177);
+}
+td {
+  text-indent: 20px;
+  font-style: italic;
+  font-size: 20px;
+}
+th {
+  font-size: 24px;
+}
+.td-btn {
+  border: none;
+}
+.thead__name , .td__name {
+  width: 16%;
+  word-wrap:break-word;
+}
+.td__name {
+  vertical-align: bottom;
+  text-align: end;
+}
+.thead__text, .td__text {
+  width: 50%;
+  word-wrap:break-word;
+}
+.thead__date {
+  width: 25%;
+  word-wrap:break-word;
+}
+.td__date{
+  font-size: 16px;
+}
+.td-btn {
+  width: 10%;
+}
+label {
+  color:#2c2cb1;
+  font-size: 24px;
+}
+.td__text {
+  
+  background-image: url("comment.png");
+  background-size: 100% 100% ;
+  background-repeat: no-repeat;
+}
+.td__text-div {
+  width: 95%;
+  margin: 10px 50px 50px 10px;
+  max-height: 150px ;
+  overflow-y: auto;
+}
+input {
+  height: 40px;
+  width: 20%;
+  text-indent: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+input:hover, textarea:hover {
+  background: #8dddcc; 
+  border: 1px solid #29B0D9;
+}
+textarea {
+  text-indent: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+}
+.btn-send {
+  height: 40px;
+  width: 20%;
+  background-color: white;
+  color:#2c2cb1;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  cursor: pointer;
+}
+.btn-del {
+  height: 40px;
+  width: 100px;
+  background-color: white;
+  color:  #ec3030;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  cursor: pointer;
+}
+.btn-send:hover {
+  background-color:#8dddcc;
+}
+.btn-del:hover {
+  background-color:red;
+  color:  black;
+}
