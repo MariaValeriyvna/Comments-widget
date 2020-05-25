@@ -10,13 +10,24 @@ class AllComments extends React.Component {
            comments: [],
             newComment : []
          };   
-      this.state = JSON.parse (localStorage.getItem("allcomments"));
+    
       this.addComment = this.addComment.bind(this);
       this.handleChangeName = this.handleChangeName.bind(this);
       this.handleChangeText = this.handleChangeText.bind(this);
       this.deletComment = this.deletComment.bind(this);
    }
 
+   
+   componentDidMount() {
+      console.log(JSON.parse(localStorage.getItem("allcomments")));
+      let data = localStorage.getItem("allcomments");
+      console.log (data);
+      if (data !==null) {this.setState ({comments : JSON.parse(data), newComment : [] })}
+      else { this.setState({comments: [], newComment : []})
+   
+      };
+     
+    }
    handleChangeName(ev) {
       this.setState ({newCommentName: ev.target.value})
    }
@@ -41,21 +52,22 @@ class AllComments extends React.Component {
           newCommentText: '',
           newCommentDate: ''
       });
-      event.preventDefault();
+      localStorage.setItem("allcomments", JSON.stringify(this.state.comments))
    }
 
    deletComment (index)   {
-      const {comments} = this.state
+      const comments = this.state.comments;
+      console.log (comments);
+      let p = comments.filter((comment, i) => i !== index);
       this.setState ({
-         comments :  comments.filter((comment, i) => {
-         return i !== index 
-         }),
-         key : {index}
-      })
+         comments :  comments.filter((comment, i) => i !== index)
+      });
+      localStorage.setItem("allcomments", JSON.stringify(p))
+    
    }
 
    render() {
-      localStorage.setItem("allcomments", JSON.stringify( this.state ))
+     
       if (this.state.newCommentText!==null && this.handleChangeName!==null){
          <button className ="btn-send" disabled = {true}></button>
       } 
